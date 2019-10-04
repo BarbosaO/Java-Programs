@@ -39,9 +39,13 @@ public class HappyNumber
 		}
 		
 		System.exit(0);
-		
 	}
 	
+	/**
+	 * Method to find sum of given number digits
+	 * @param num is the given number
+	 * @return sum of number digits
+	 */
 	public static int happyNumberSum(int num)
 	{
 		// sum of digits
@@ -68,5 +72,3 @@ public class HappyNumber
 		return sum;
 	}
 }
-
-
