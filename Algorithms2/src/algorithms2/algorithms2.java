@@ -43,7 +43,15 @@ public class algorithms2
 		} 
 	} 
 	
+	// node of the maximum sum subtree
 	public static int currRoot = 0;
+	
+	/**
+	 * Helper method to find the max subtree sum
+	 * @param root is the root of the Tree T
+	 * @param answer is the answer of the subtree children sums
+	 * @return max subtree sum
+	 */
 	public static int findSubtreeMaxSumAux(TreeNode root, int answer)
 	{
 		if(root == null)
@@ -51,15 +59,21 @@ public class algorithms2
 			return 0;
 		}
 		
+		// get subtree sums
 		int currSum = root.val + findSubtreeMaxSumAux(root.left, answer) +
 				findSubtreeMaxSumAux(root.right, answer);
 		
+		// comatre to answer and update if max
 		if(answer < currSum)
 		{
+			// update maximum subtree sum root
 			currRoot = root.val;
-			answer.v = Math.max(answer, currSum); 
+			
+			// update sum
+			answer = Math.max(answer, currSum); 
 		}
 		
+		// max subtree sum
 		return currSum;
 	}
 	
