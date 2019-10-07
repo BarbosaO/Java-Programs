@@ -44,7 +44,7 @@ public class algorithms2
 	} 
 	
 	public static int currRoot = 0;
-	public static int findSubtreeMaxSumAux(TreeNode root, INT answer)
+	public static int findSubtreeMaxSumAux(TreeNode root, int answer)
 	{
 		if(root == null)
 		{
@@ -54,10 +54,10 @@ public class algorithms2
 		int currSum = root.val + findSubtreeMaxSumAux(root.left, answer) +
 				findSubtreeMaxSumAux(root.right, answer);
 		
-		if(answer.v < currSum)
+		if(answer < currSum)
 		{
 			currRoot = root.val;
-			answer.v = Math.max(answer.v, currSum); 
+			answer.v = Math.max(answer, currSum); 
 		}
 		
 		return currSum;
