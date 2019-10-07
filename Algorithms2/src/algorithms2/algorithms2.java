@@ -44,7 +44,7 @@ public class algorithms2
 	} 
 	
 	// node of the maximum sum subtree
-	public static int currRoot = 0;
+	public static int currRootVal = 0;
 	
 	/**
 	 * Helper method to find the max subtree sum
