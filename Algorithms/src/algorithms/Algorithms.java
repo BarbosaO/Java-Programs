@@ -15,22 +15,27 @@ public class Algorithms
 	 * @param arr is the array
 	 * @param low is starting point
 	 * @param high is ending point
-	 * @return
+	 * @return max element in unimodal array
 	 */
 	public static int unimodalMax(int [] arr, int low, int high)
-	{
+	{	
+		// check if low is last element
 		if(low == high - 1)
 		{
 			return arr[low];
 		}
 		
+		// get mid pivot to look split array in half
 		int mid = low + (high - low) / 2;
 		
+		// if peak is at left hand side
 		if(arr[mid] < arr[mid + 1])
-		{
+		{ 
+			// recurse right hand side
 			return unimodalMax(arr, mid + 1, high);
 		}
-		else
+		else	
+			// recurse left hand side
 			return unimodalMax(arr, low, mid);
 	}
 }
